@@ -1,2 +1,1 @@
-# servicechecker
-Service checker script
+# Service checker script
