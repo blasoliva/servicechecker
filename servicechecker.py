@@ -37,7 +37,7 @@ def send_email(to, msg):
     msg = MIMEText(msg + '\nThe service has been restarted.')
     msg["To"] = email
     msg["Subject"] = "Service checker alert"
-    p = Popen(["/usr/sbin/sendmail", "-t", "-oi"], stdin=subprocess.PIPE)
+    p = subprocess.Popen(["/usr/sbin/sendmail", "-t", "-oi"], stdin=subprocess.PIPE)
     p.communicate(msg.as_string())
     write_log('Sending alert email\n')
     
